@@ -7,8 +7,6 @@ import arrow from "../assets/Icons/chevron_down.svg";
 import store from "../assets/Icons/store.svg";
 import search from "../assets/Icons/search.png";
 
-import { navigationMenuTriggerStyle } from "@/components/ui/navigation-menu";
-
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
 import { NavMenu } from "@/components/NavMenu";
@@ -36,9 +34,13 @@ const Navbar = () => {
           />
         </div>
         <div className="flex gap-2">
-          <Link to="/auth/" className="flex">
-            Login <img src={arrow} alt="" />
+          <Link to="/auth/" className="flex items-center">
+            Login
+            <span>
+              <img src={arrow} alt="" />
+            </span>
           </Link>
+
           <img src={store} alt="store" className="ml-4" />
           <img src={cart} alt="cart" className="ml-4" />
         </div>
@@ -66,7 +68,7 @@ const Navbar = () => {
             className={`fixed top-0 right-0 h-full w-64 bg-black shadow-lg transition-transform duration-700 ease-in-out transform ${
               isSidebarOpen ? "translate-x-0" : "translate-x-full"
             }`}
-            style={{ transition: "transform 0.7s ease-in-out" }} 
+            style={{ transition: "transform 0.7s ease-in-out" }}
           >
             <button
               className="absolute h-12 w-12 top-4 right-4 text-white text-2xl"

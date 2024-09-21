@@ -2,7 +2,6 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import { cn } from "@/lib/utils";
-// import { Icons } from "@/components/icons"
 import {
   NavigationMenu,
   NavigationMenuContent,
@@ -53,7 +52,7 @@ const components = [
 
 export function NavMenu() {
   return (
-    <NavigationMenu className="max-[790px]:hidden" >
+    <NavigationMenu className="max-[790px]:hidden">
       <NavigationMenuList>
         <NavigationMenuItem>
           <NavigationMenuTrigger>MEN</NavigationMenuTrigger>
@@ -151,7 +150,7 @@ export function NavMenu() {
               ))}
             </ul>
           </NavigationMenuContent>
-        </NavigationMenuItem>{" "}
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <NavigationMenuTrigger>BRANDS</NavigationMenuTrigger>
           <NavigationMenuContent>
