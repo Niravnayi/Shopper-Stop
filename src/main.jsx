@@ -17,7 +17,7 @@ import MainLayout from "./layouts/mainLayout.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Outlet />,
+    element: <App />,
     children: [
       {
         path: "/",

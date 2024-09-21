@@ -15,7 +15,7 @@ const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   return (
     <div>
-      <div className=" w-screen flex gap-4 items-center justify-between px-[9%] p-5 mt-3">
+      <div className=" container w-screen flex gap-4 items-center justify-between   mt-4   ">
         <div className="w-56 max-[690px]:hidden  ">
           <img src={logo} alt="logo" />
         </div>
@@ -37,7 +37,7 @@ const Navbar = () => {
           <Link to="/auth/" className="flex items-center">
             Login
             <span>
-              <img src={arrow} alt="" />
+              <img src={arrow} alt="arrow" />
             </span>
           </Link>
 
@@ -65,7 +65,7 @@ const Navbar = () => {
           />
 
           <div
-            className={`fixed top-0 right-0 h-full w-64 bg-black shadow-lg transition-transform duration-700 ease-in-out transform ${
+            className={`fixed top-0 right-0 h-full w-64 bg-black z-50 shadow-lg transition-transform duration-700 ease-in-out transform ${
               isSidebarOpen ? "translate-x-0" : "translate-x-full"
             }`}
             style={{ transition: "transform 0.7s ease-in-out" }}
@@ -119,7 +119,7 @@ const Navbar = () => {
           </div>
         </div>
       </div>
-      <div className="font-Josefin">
+      <div className="font-Josefin w-full container">
         <NavMenu />
       </div>
     </div>

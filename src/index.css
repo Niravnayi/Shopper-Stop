@@ -1,6 +1,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 
+
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -138,5 +141,46 @@
       }
     }
   }
+}
+
+.carousel-container {
+  text-align: center;
+  padding: 40px;
+}
+
+.carousel-item {
+  padding: 10px; /* Add space between items */
+  transition: all 0.3s ease-in-out;
+}
+
+.carousel-item .image-container {
+  overflow: hidden; /* Ensure the image stays inside the container */
+}
+
+.carousel-image {
+  width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.carousel-item:hover .carousel-image {
+  transform: scale(1.1); /* Zoom effect on hover */
+}
+
+.carousel-item:not(:hover) .carousel-image {
+  filter: blur(3px); /* Blur non-hovered images */
+}
+
+.carousel-item:hover {
+  z-index: 10; /* Bring the hovered item to the front */
+}
+
+.carousel-item:not(:hover) {
+  opacity: 0.5; /* Add fade effect to non-hovered items */
+}
+
+.carousel-item p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #000;
 }
 

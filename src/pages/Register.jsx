@@ -31,7 +31,7 @@ export function Register() {
 
   const onSubmit = (data) => {
     console.log(data);
-    navigate("/");
+    navigate("/auth");
   };
 
   return (
