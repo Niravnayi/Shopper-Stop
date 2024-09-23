@@ -12,10 +12,32 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 
-const components = [
+
+const women = [
   {
-    title: "Alert Dialog",
-    href: "/docs/primitives/alert-dialog",
+    title: "Cloths",
+    href: "/women",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Women -jewellery",
+    href: "/women/jewellery",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  
+];
+const kids = [
+  {
+    title: "Cloths",
+    href: "/kids",
     description:
       "A modal dialog that interrupts the user with important content and expects a response.",
   },
@@ -31,23 +53,71 @@ const components = [
     description:
       "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
   },
+  
+];
+
+const beauty = [
   {
-    title: "Scroll-area",
-    href: "/docs/primitives/scroll-area",
-    description: "Visually or semantically separates content.",
-  },
-  {
-    title: "Tabs",
-    href: "/docs/primitives/tabs",
+    title: "Mack-Up",
+    href: "/beauty",
     description:
-      "A set of layered sections of content—known as tab panels—that are displayed one at a time.",
+      "A modal dialog that interrupts the user with important content and expects a response.",
   },
   {
-    title: "Tooltip",
-    href: "/docs/primitives/tooltip",
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
     description:
-      "A popup that displays information related to an element when the element receives keyboard focus or the mouse hovers over it.",
+      "For sighted users to preview content available behind a link.",
   },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  
+];
+const gifts = [
+  {
+    title: "Gifts",
+    href: "/gifts",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  
+];
+const brands = [
+  {
+    title: "Branded",
+    href: "/brands",
+    description:
+      "A modal dialog that interrupts the user with important content and expects a response.",
+  },
+  {
+    title: "Hover Card",
+    href: "/docs/primitives/hover-card",
+    description:
+      "For sighted users to preview content available behind a link.",
+  },
+  {
+    title: "Progress",
+    href: "/docs/primitives/progress",
+    description:
+      "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+  },
+  
 ];
 
 export function NavMenu() {
@@ -60,9 +130,9 @@ export function NavMenu() {
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
                 <NavigationMenuLink >
-                  <a
+                  <Link
                     className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    to="/men"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
                       shadcn/ui
@@ -72,7 +142,7 @@ export function NavMenu() {
                       paste into your apps. Accessible. Customizable. Open
                       Source.
                     </p>
-                  </a>
+                  </Link>
                 </NavigationMenuLink>
               </li>
               <ListItem href="/docs" title="Introduction">
@@ -91,7 +161,7 @@ export function NavMenu() {
           <NavigationMenuTrigger>WOMEN</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {women.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -107,7 +177,7 @@ export function NavMenu() {
           <NavigationMenuTrigger>KIDS</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {kids.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -123,7 +193,7 @@ export function NavMenu() {
           <NavigationMenuTrigger>BEAUTY</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {beauty.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -139,7 +209,7 @@ export function NavMenu() {
           <NavigationMenuTrigger>GIFTS</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {gifts.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}
@@ -155,7 +225,7 @@ export function NavMenu() {
           <NavigationMenuTrigger>BRANDS</NavigationMenuTrigger>
           <NavigationMenuContent>
             <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-              {components.map((component) => (
+              {brands.map((component) => (
                 <ListItem
                   key={component.title}
                   title={component.title}

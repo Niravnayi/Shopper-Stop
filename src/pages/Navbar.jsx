@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import menu from "../assets/Icons/menu.png";
 import logo from "../assets/logo.png";
-import logo2 from "../assets/Icons/logo2.png";
+import logo2 from "../assets/mainlogo.jpg";
 import cart from "../assets/Icons/bag.svg";
 import arrow from "../assets/Icons/chevron_down.svg";
 import store from "../assets/Icons/store.svg";
@@ -19,7 +19,7 @@ const Navbar = () => {
         <div className="w-56 max-[690px]:hidden  ">
           <img src={logo} alt="logo" />
         </div>
-        <div className="w-10 full min-[690px]:hidden  ">
+        <div className="w-24 full min-[690px]:hidden  ">
           <img src={logo2} alt="logo2" />
         </div>
         <div className="w-full flex justify-center relative max-[790px]:hidden  ">
@@ -80,39 +80,39 @@ const Navbar = () => {
             <nav className="mt-16 px-4">
               <ul className="space-y-4 list-none">
                 <li>
-                  <a href="#" className="text-lg text-white font-medium">
+                  <Link to="/men" className="text-lg text-white font-medium">
                     MEN
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-lg text-white font-medium">
+                  <Link to="/women" className="text-lg text-white font-medium">
                     WOMEN
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-lg text-white font-medium">
+                  <Link to="kids" className="text-lg text-white font-medium">
                     KIDS
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-lg text-white font-medium">
+                  <Link to="/beauty" className="text-lg text-white font-medium">
                     BEAUTY
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-lg text-white font-medium">
+                  <Link to="/gifts" className="text-lg text-white font-medium">
                     GIFTS
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="#" className="text-lg text-white font-medium">
+                  <Link to="brands" className="text-lg text-white font-medium">
                     BRANDS
-                  </a>
+                  </Link>
                 </li>
                 <li>
-                  <a href="/docs" className="text-lg text-white font-medium">
+                  <Link to="/" className="text-lg text-white font-medium">
                     Documentation
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>

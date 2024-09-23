@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { ProductsCard } from "./ProductsCard";
+import { ProductsCard } from "../components/ProductsCard";
 import "../index.css";
 const Products = () => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     async function fetchProducts() {
       const response = await fetch(
-        "https://dummyjson.com/products/category/beauty"
-      );
+"https://dummyjson.com/products/category/laptops"      );
       const data = await response.json();
       if (data && data.products) {
         setProducts(data.products);
@@ -20,8 +19,8 @@ const Products = () => {
   return (
     <>
       <div className="w-full pt-32 min-h-screen container mx-auto ">
-          <h1 className="text-4xl text-center  font-bold uppercase">Products</h1>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+      <h1 className="text-4xl text-center font-semibold uppercase font-mono underline">Pro<span className="text-gray-600">du</span>cts</h1>
+      <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
           {products && products.length > 0 ? (
             products.map((item) => (
               <div key={item.id}>
