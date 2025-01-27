@@ -17,6 +17,8 @@ import Brands from "./pages/Brands.jsx";
 import { store } from "./Redux/store";
 import { Provider } from "react-redux";
 import AdminPanel from "./pages/MenAdminPanel.jsx";
+import { ClerkProvider } from "@clerk/clerk-react";
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -99,10 +101,18 @@ const router = createBrowserRouter([
     ),
   },
 ]);
+
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key");
+}
 createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <RouterProvider router={router}>
-      <App />
-    </RouterProvider>
-  </Provider>
+  <ClerkProvider publishableKey={PUBLISHABLE_KEY} afterSignOutUrl="/">
+    <Provider store={store}>
+      <RouterProvider router={router}>
+        <App />
+      </RouterProvider>
+    </Provider>
+  </ClerkProvider>
 );

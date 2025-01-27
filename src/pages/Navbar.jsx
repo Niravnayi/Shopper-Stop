@@ -19,6 +19,12 @@ import { NavMenu } from "@/components/NavMenu";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCart, removeItemFromCart } from "@/Redux/slices/cartSlice";
 import { Cross1Icon } from "@radix-ui/react-icons";
+import {
+  SignedIn,
+  SignedOut,
+  SignInButton,
+  UserButton,
+} from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -106,15 +112,19 @@ const Navbar = () => {
             className="h-6 absolute left-[83%] top-[25%] cursor-pointer"
           />
         </div>
-        <div className="flex gap-2">
-          <Link to="/auth/" className="flex items-center">
-            Login
-            <span>
-              <img src={arrow} alt="arrow" />
-            </span>
-          </Link>
+        <div className="flex items-center gap-4">
+          <SignedOut>
+            <SignInButton>
+              <button className=" py-2 px-4 rounded-lg font-medium hover:text-orange-600 transition duration-300">
+                Login
+              </button>
+            </SignInButton>
+          </SignedOut>
+          <SignedIn>
+            <UserButton />
+          </SignedIn>
 
-          <img src={store} alt="store" className="ml-4" />
+          <img src={store} alt="store" className="w-9" />
 
           <div
             onClick={() => {
@@ -278,7 +288,7 @@ const Navbar = () => {
             width="40"
             height="40"
             viewBox="0 0 50 50"
-            onClick={()=> setIsSidebarOpen(true)}
+            onClick={() => setIsSidebarOpen(true)}
           >
             <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
           </svg>
