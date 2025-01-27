@@ -39,10 +39,10 @@ const Navbar = () => {
 
   const handlePayment = () => {
     const options = {
-      key: "rzp_test_WHdWouX0xE9HcF", // Test key
+      key: "rzp_test_nDMZluKoMVl3qs", // Test key
       amount: total * 100,
       currency: "INR",
-      name: "Your Shop",
+      name: "Shopper Stop",
       description: "Test Transaction",
       image: "https://your-logo-url",
       handler: function (response) {

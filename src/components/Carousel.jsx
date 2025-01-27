@@ -1,5 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
-import styled from 'styled-components';
+import React, { useState, useEffect, useRef } from "react";
+import styled from "styled-components";
+import AOS from "aos";
+import "aos/dist/aos.css"; // You can also use <link> for styles
+// ..
+AOS.init();
 
 const CarouselContainer = styled.div`
   position: relative;
@@ -56,19 +60,23 @@ const ImageCarousel = ({ images }) => {
   }, [currentIndex]);
 
   return (
-    <div>
-      <CarouselContainer className='mt-10'>
+    <div data-aos="zoom-in-up">
+      <CarouselContainer className="mt-10">
         <CarouselWrapper ref={carouselRef}>
           {images.map((image, index) => (
             <CarouselItem key={index}>
-              <img src={image} alt={`Slide ${index + 1}`} style={{ width: '100%' }} />
+              <img
+                src={image}
+                alt={`Slide ${index + 1}`}
+                style={{ width: "100%" }}
+              />
             </CarouselItem>
           ))}
         </CarouselWrapper>
       </CarouselContainer>
       <DotsContainer>
         {images.map((_, index) => (
-          <Dot key={index} className={currentIndex === index ? 'active' : ''} />
+          <Dot key={index} className={currentIndex === index ? "active" : ""} />
         ))}
       </DotsContainer>
     </div>

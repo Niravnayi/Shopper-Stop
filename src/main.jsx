@@ -16,6 +16,7 @@ import Womensjewellery from "./pages/Womensjewellery.jsx";
 import Brands from "./pages/Brands.jsx";
 import { store } from "./Redux/store";
 import { Provider } from "react-redux";
+import AdminPanel from "./pages/MenAdminPanel.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -62,6 +63,10 @@ const router = createBrowserRouter([
               {
                 path: "brands",
                 element: <Brands />,
+              },
+              {
+                path: "AdminPanel",
+                element: <AdminPanel />,
               },
             ],
           },
