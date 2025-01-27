@@ -94,16 +94,16 @@ const Navbar = () => {
 
   return (
     <div>
-      <div className=" container w-screen flex gap-4 items-center justify-between   mt-4   ">
-        <div className="w-56 max-[790px]:hidden  ">
+      <div className="container w-screen flex gap-4 items-center justify-between mt-4">
+        <div className="w-56 max-[790px]:hidden">
           <img src={logo} alt="logo" />
         </div>
-        <div className="w-24 full min-[790px]:hidden  ">
+        <div className="w-24 full min-[790px]:hidden">
           <img src={logo2} alt="logo2" />
         </div>
-        <div className="w-full flex justify-center relative max-[790px]:hidden  ">
+        <div className="w-full flex justify-center relative max-[790px]:hidden">
           <Input
-            className="w-[80%] rounded-full bg-[#f0f0f0] border-none p-6 font-sans  "
+            className="w-[80%] rounded-full bg-[#f0f0f0] border-none p-6 font-sans"
             placeholder="What are you looking for?"
           />
           <img
@@ -115,8 +115,8 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           <SignedOut>
             <SignInButton>
-              <button className=" py-2 px-4 rounded-lg font-medium hover:text-orange-600 transition duration-300">
-                Login
+              <button className="smky-btn3 relative hover:text-[#778464] py-2 px-6 flex items-center justify-center after:absolute after:h-1 after:hover:h-[200%] transition-all duration-500 hover:transition-all hover:duration-500 after:transition-all after:duration-500 after:hover:transition-all after:hover:duration-500 overflow-hidden z-20 after:z-[-20] after:bg-[#abd373] after:rounded-t-full after:w-full after:bottom-0 after:left-0 text-black">
+                LogIn
               </button>
             </SignInButton>
           </SignedOut>
@@ -124,7 +124,7 @@ const Navbar = () => {
             <UserButton />
           </SignedIn>
 
-          <img src={store} alt="store" className="w-9" />
+          <img src={store} alt="store" className="w-6" />
 
           <div
             onClick={() => {
@@ -132,9 +132,9 @@ const Navbar = () => {
             }}
             className="relative cursor-pointer"
           >
-            <img src={cart} alt="cart" className="ml-4  min-[790px]:w-7" />
+            <img src={cart} alt="cart" className="ml-3 min-[790px]:w-11" />
             {cartItemsCount > 0 && (
-              <span className=" absolute -top-[12px] -right-[28px] max-[690px]:-right-[15px] bg-red-500 text-white rounded-full w-5 h-5 text-sm flex items-center justify-center">
+              <span className="absolute -top-[12px] -right-[28px] max-[690px]:-right-[15px] bg-red-500 text-white rounded-full w-5 h-5 text-sm flex items-center justify-center">
                 {cartItemsCount}
               </span>
             )}
@@ -169,7 +169,7 @@ const Navbar = () => {
                         >
                           <span className="absolute -inset-0.5" />
                           <span className="sr-only">Close panel</span>
-                          <Cross1Icon className="w-10 h-6 " />
+                          <Cross1Icon className="w-10 h-6" />
                         </button>
                       </div>
                     </div>
@@ -244,7 +244,7 @@ const Navbar = () => {
                       <div className="mt-6">
                         <a
                           // href="#"
-                          className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm "
+                          className="flex items-center justify-center rounded-md border border-transparent bg-black px-6 py-3 text-base font-medium text-white shadow-sm"
                           onClick={handlePayment}
                         >
                           Checkout
@@ -254,7 +254,7 @@ const Navbar = () => {
                         <p>
                           <button
                             onClick={handleClearCart}
-                            className="font-medium text-black "
+                            className="font-medium text-black"
                           >
                             Clear Cart
                           </button>
@@ -269,9 +269,9 @@ const Navbar = () => {
         </div>
       </Dialog>
 
-      <div className="w-screen flex gap-4 justify-center relative min-[790px]:hidden px-[2%]  ">
+      <div className="w-screen flex gap-4 justify-center relative min-[790px]:hidden px-[2%]">
         <Input
-          className="w-[80%] rounded-full bg-[#f0f0f0] border-none p-6 font-sans  "
+          className="w-[80%] rounded-full bg-[#f0f0f0] border-none p-6 font-sans"
           placeholder="What are you looking for?"
         />
         <img
@@ -285,7 +285,7 @@ const Navbar = () => {
             xmlns="http://www.w3.org/2000/svg"
             x="0px"
             y="0px"
-            width="40"
+            width="30"
             height="40"
             viewBox="0 0 50 50"
             onClick={() => setIsSidebarOpen(true)}
@@ -308,6 +308,11 @@ const Navbar = () => {
 
             <nav className="mt-16 px-4">
               <ul className="space-y-4 list-none">
+                <li>
+                  <Link to="/" className="text-lg text-white font-medium">
+                    Home
+                  </Link>
+                </li>
                 <li>
                   <Link to="/men" className="text-lg text-white font-medium">
                     MEN
@@ -336,11 +341,6 @@ const Navbar = () => {
                 <li>
                   <Link to="brands" className="text-lg text-white font-medium">
                     BRANDS
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/" className="text-lg text-white font-medium">
-                    Documentation
                   </Link>
                 </li>
               </ul>
